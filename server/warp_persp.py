@@ -2,10 +2,6 @@ import cv2
 import numpy as np
 from cvt_to_binary import to_binary
 
-
-
-    # Helper functions for getting square image
-
 def euclidian_distance(point1, point2):
     # Calcuates the euclidian distance between the point1 and point2
     #used to calculate the length of the four sides of the square 

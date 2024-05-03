@@ -12,7 +12,6 @@ original = cv2.imread("server/sudoku_bg.png")
 sudoku = get_square_box_from_image(original) # align perspective and crop to square
 
 binary_img = to_binary(sudoku) # convert to 900x900 binary image
-cv2.imshow("Binary Image", binary_img)
 
 crop_amt = 20 # amount to crop from each side to avoid the border
 
@@ -30,13 +29,12 @@ for row in range(1, 10):
         res = get_prediction(cell, model)
         grid[row-1][col-1] = res
 
-fig, ax = plt.subplots()
-for i in range(len(grid)):
-    for j in range(len(grid[0])):
-        ax.text(j, i, str(grid[::-1][i][j]), va='center', ha='center')
+# fig, ax = plt.subplots()
+# for i in range(len(grid)):
+#     for j in range(len(grid[0])):
+#         ax.text(j, i, str(grid[::-1][i][j]), va='center', ha='center')
 
-ax.axis('off')  # Turn off the axis
-plt.show()
+# ax.axis('off')  # Turn off the axis
+# plt.show()
 
 print(grid)
-cv2.waitKey(0)

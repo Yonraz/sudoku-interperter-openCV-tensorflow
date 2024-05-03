@@ -21,13 +21,7 @@ def get_grid_from_sudoku(filename):
 
         sudoku = get_square_box_from_image(original) # align perspective and crop to square
 
-        cv2.imshow("Sudoku", sudoku)
-        cv2.waitKey(0)
-
         binary_img = to_binary(sudoku) # convert to 900x900 binary image
-
-        cv2.imshow("Binary Image", binary_img)
-        cv2.waitKey(0)
 
         crop_amt = 20 # amount to crop from each side to avoid the border
 

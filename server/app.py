@@ -6,10 +6,14 @@ import os
 app = Flask(__name__)
 CORS(app)
 UPLOAD_PATH='server'
+FILE_NAME='img'
+
+def getFileName(name):
+    return FILE_NAME + os.path.splitext(name)[1]
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     try:
-
         if request.method == 'POST':
             if 'file' not in request.files:
                 return jsonify('No file part')
@@ -17,7 +21,7 @@ def upload_file():
         if file.filename == '':
             return jsonify('No selected file')
         if file:
-            filename = os.path.join(UPLOAD_PATH, file.filename)
+            filename = os.path.join(UPLOAD_PATH, getFileName(file.filename))
             file.save(filename)
             grid = get_grid_from_sudoku(filename)
             os.remove(filename)
