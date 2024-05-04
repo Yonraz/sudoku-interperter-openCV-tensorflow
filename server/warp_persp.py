@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from cvt_to_binary import to_binary
+from server.cvt_to_binary import to_binary
 
 def euclidian_distance(point1, point2):
     # Calcuates the euclidian distance between the point1 and point2

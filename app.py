@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from process_img import get_grid_from_sudoku
+from server.process_img import get_grid_from_sudoku
 from flask_cors import CORS
 import os
 

@@ -1,12 +1,12 @@
 from json import JSONEncoder
 import json
-from warp_persp import get_square_box_from_image
-from cvt_to_binary import to_binary
+from server.warp_persp import get_square_box_from_image
+from server.cvt_to_binary import to_binary
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
-from predict import get_prediction
+from server.predict import get_prediction
 import os
 
 class NumpyArrayEncoder(JSONEncoder):
