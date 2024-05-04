@@ -2,3 +2,4 @@ venv
 .git
 server/tests
 servermnist_model.keras
+server/__pycache__
